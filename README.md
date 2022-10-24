@@ -1,7 +1,7 @@
 # RaspberryPi as Travel VPN
 
 NOTE: This is my best effort at creating a secure gateway. That said, I'm not a network 
-security expert, and per the license file, there are no guarantees... only use it if 
+security expert, and per the license file, there is no warranty... only use it if 
 you understand what it's doing and are comfortable with it.
 
 This configures a RaspberryPi to be a VPN gateway for use in a hotel to get private
