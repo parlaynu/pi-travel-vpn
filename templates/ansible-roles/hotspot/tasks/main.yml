@@ -1,0 +1,35 @@
+
+- name: set wifi country
+  shell: /usr/bin/raspi-config nonint do_wifi_country {{ wifi_country }}
+
+- name: static interface
+  lineinfile:
+    path: /etc/dhcpcd.conf
+    line: interface {{ wifi_iface }}
+    regexp: '^interface'
+  notify:
+    - restart dhcpcd
+
+- name: static ip address
+  lineinfile:
+    path: /etc/dhcpcd.conf
+    line: static ip_address={{ wifi_address }}
+    regexp: '^static ip_address='
+  notify:
+    - restart dhcpcd
+
+- name: install hostapd
+  apt:
+    name: hostapd
+    state: present
+
+- name: install hostapd config
+  template:
+    src: hostapd.conf
+    dest: /etc/hostapd/hostapd.conf
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+    - restart hostapd
+

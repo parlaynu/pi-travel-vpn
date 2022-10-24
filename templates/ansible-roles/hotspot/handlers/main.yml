@@ -1,0 +1,11 @@
+- name: restart dhcpcd
+  systemd:
+    name: dhcpcd
+    state: restarted
+
+- name: restart hostapd
+  systemd:
+    name: hostapd
+    state: restarted
+    masked: no
+

@@ -1,0 +1,13 @@
+
+domainname = "my-domain.xyz"
+
+vpn_address = ""
+vpn_private_key = ""
+vpn_endpoint = ""
+vpn_endpoint_port = ""
+vpn_endpoint_public_key = ""
+
+wifi_country = "my-country-code"
+hotspot_ssid = "wifi-network-name"
+hotspot_passphrase = "wifi-secret-passphrase"
+
