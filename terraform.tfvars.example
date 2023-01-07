@@ -1,8 +1,9 @@
 
 domainname = "my-domain.xyz"
 
-vpn_address = ""
 vpn_private_key = ""
+vpn_address = ""
+vpn_dns = ""
 vpn_endpoint = ""
 vpn_endpoint_port = ""
 vpn_endpoint_public_key = ""

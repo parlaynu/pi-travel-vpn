@@ -10,13 +10,9 @@
     owner: root
     group: root
     mode: 0644
-  notify:
-    - restart dnsmasq
 
 - name: disable local resolving
   lineinfile:
     path: /etc/default/dnsmasq
     line: DNSMASQ_EXCEPT="lo"
     regexp: '^#DNSMASQ_EXCEPT='
-  notify:
-    - restart dnsmasq

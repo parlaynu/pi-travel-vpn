@@ -7,16 +7,12 @@
     path: /etc/dhcpcd.conf
     line: interface {{ wifi_iface }}
     regexp: '^interface'
-  notify:
-    - restart dhcpcd
 
 - name: static ip address
   lineinfile:
     path: /etc/dhcpcd.conf
     line: static ip_address={{ wifi_address }}
     regexp: '^static ip_address='
-  notify:
-    - restart dhcpcd
 
 - name: install hostapd
   apt:
@@ -30,6 +26,11 @@
     owner: root
     group: root
     mode: 0644
-  notify:
-    - restart hostapd
+
+- name: enable hostapd service
+  systemd:
+    name: hostapd
+    masked: false
+    enabled: true
+    daemon_reload: true
 

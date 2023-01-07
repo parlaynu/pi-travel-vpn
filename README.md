@@ -24,6 +24,9 @@ I use the 'lite' version - the gateway doesn't need a user interface.
 Using the Imager tool, you can enable ssh and set the public key for access; it cuts out a few steps 
 compared to doing it manually.
 
+Be careful not to join a wifi network during the imaging stage: this configuration needs to configure
+the wifi interface as a hotspot and it doesn't work if it is already connected to wifi.
+
 ## Connecting
 
 Connect your Pi to your network and boot it. Once you have the IP address it is assigned from

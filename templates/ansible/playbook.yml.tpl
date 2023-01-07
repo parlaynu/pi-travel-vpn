@@ -22,4 +22,6 @@
   - import_role:
       name: ${hotspot_role}
 
+  - name: rebooting
+    ansible.builtin.reboot:
 

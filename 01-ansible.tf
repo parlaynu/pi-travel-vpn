@@ -38,9 +38,9 @@ resource "local_file" "hostvars" {
     hotspot_passphrase = var.hotspot_passphrase,
     dhcp_start = local.dhcp_start,
     dhcp_end = local.dhcp_end,
-    stubby_upstream_servers = var.stubby_upstream_servers,
-    vpn_address = var.vpn_address,
     vpn_private_key = var.vpn_private_key,
+    vpn_address = var.vpn_address,
+    vpn_dns = var.vpn_dns,
     vpn_endpoint = var.vpn_endpoint,
     vpn_endpoint_port = var.vpn_endpoint_port,
     vpn_endpoint_public_key = var.vpn_endpoint_public_key

@@ -10,8 +10,6 @@
     owner: root
     group: root
     mode: 0644
-  notify:
-    - restore iptables v4
 
 - name: install iptable v6 rules
   template:
@@ -20,6 +18,4 @@
     owner: root
     group: root
     mode: 0644
-  notify:
-    - restore iptables v6
 

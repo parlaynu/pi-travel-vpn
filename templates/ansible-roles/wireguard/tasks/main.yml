@@ -10,8 +10,6 @@
     owner: root
     group: root
     mode: 0440
-  notify:
-    - restart wireguard
 
 - name: create wireguard script directory
   file:
@@ -28,8 +26,6 @@
     owner: root
     group: root
     mode: 0750
-  notify:
-    - restart wireguard
 
 - name: install wireguard pre-down script
   template:
@@ -38,6 +34,9 @@
     owner: root
     group: root
     mode: 0750
-  notify:
-    - restart wireguard
 
+- name: enable wireguard service
+  systemd:
+    name: wg-quick@wg0
+    enabled: true
+    daemon_reload: true

@@ -45,28 +45,15 @@ variable "wired_iface" {
   default = "eth0"
 }
 
-variable "stubby_upstream_servers" {
-  type = list(object({
-    ip_address = string
-    tls_auth_name = string
-  }))
-  default = [
-    {
-      ip_address = "1.1.1.1"
-      tls_auth_name =  "cloudflare-dns.com"
-    },
-    {
-      ip_address = "1.0.0.1"
-      tls_auth_name =  "cloudflare-dns.com"
-    }
-  ]
+variable "vpn_private_key" {
+  default = ""
 }
 
 variable "vpn_address" {
   default = ""
 }
 
-variable "vpn_private_key" {
+variable "vpn_dns" {
   default = ""
 }
 
